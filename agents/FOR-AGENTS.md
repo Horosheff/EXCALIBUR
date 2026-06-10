@@ -10,11 +10,12 @@
 | **Skill** | [director-excalibur-blog](../skills/director-excalibur-blog/SKILL.md) |
 | **Задача** | shell preflight, запуск Task, перенос fragments, финальный статус |
 
-## 7 субагентов (Task)
+## 8 субагентов (Task)
 
-| # | `Task(name)` | Роль | agent | skill |
-|---|--------------|------|-------|-------|
-| ① | `excalibur-blog-research` | Research, SERP, факты | [research](excalibur-blog-research.md) | [excalibur-research](../skills/excalibur-research/SKILL.md) |
+|| # | `Task(name)` | Роль | agent | skill |
+|---|---|--------------|------|-------|-------|
+|| 🔍 | `excalibur-blog-scout` | Разведка трендов и подбор тем | [scout](excalibur-blog-scout.md) | [scout-excalibur-blog](../skills/scout-excalibur-blog/SKILL.md) |
+|| ① | `excalibur-blog-research` | Research, SERP, факты | [research](excalibur-blog-research.md) | [excalibur-research](../skills/excalibur-research/SKILL.md) |
 | ② | `excalibur-blog-writer` | Longread HTML + meta | [writer](excalibur-blog-writer.md) | [writer-excalibur-blog](../skills/writer-excalibur-blog/SKILL.md) |
 | ③ | `excalibur-blog-geo-qa` | QA-скрипты, PASS | [geo-qa](excalibur-blog-geo-qa.md) | [excalibur-geo-qa](../skills/excalibur-geo-qa/SKILL.md) |
 | ④a | `excalibur-blog-cover` | ONE MCP quad i2i + inline | [cover](excalibur-blog-cover.md) | [cover-excalibur-blog](../skills/cover-excalibur-blog/SKILL.md) |

@@ -7,6 +7,8 @@
 ```text
 [Д] Директор (чат)
   │
+  ├─ 🔍 Task(excalibur-blog-scout)       ← Генерация / подбор свежих тем
+  │
   ├─ shell: excalibur_blog_today.py
   ├─ shell: excalibur_blog_research_start.py
   │
@@ -25,6 +27,7 @@
 
 | Шаг | Кто | Task name | Задачи | Артефакты | Handoff / fragment |
 |-----|-----|-----------|--------|-----------|-------------------|
+| 🔍 | **Scout** | `excalibur-blog-scout` | Поиск трендов 2026, Wordstat проверка, Jaccard-тест на уникальность | blog-topics.md (новые темы) | — |
 | 0 | **Директор** | — (shell) | дата, SERP, **utility gate темы**, article_dir | research-context.json, research-serp.json | обновить таблицу статуса |
 | ① | **Research** | `excalibur-blog-research` | SERP + web, факты с источниками, угол, FAQ-кандидаты | research-notes.md | handoff `=== RESEARCH ===` |
 | ② | **Writer** | `excalibur-blog-writer` | longread 8.5–9.5k, FAQ HTML, meta_ab | article.html, article.meta.json | handoff `=== WRITER ===` |
@@ -53,6 +56,18 @@
 Нельзя параллелить: ①→②→③, ⑤ после ④, ⑥ после ⑤.
 
 ## Промпты для Директора (копировать в Task)
+
+### 🔍 Scout (Генератор свежих тем)
+
+```text
+Ты excalibur-blog-scout.
+Прочитай agents/excalibur-blog-scout.md + skills/scout-excalibur-blog/SKILL.md + shared/editorial-utility-only.md.
+1) python scripts/excalibur_blog_scout_helper.py --suggest-next
+2) WebSearch Курсора — найди горячие тренды 2026 (ИИ, автоматизация, n8n, Cursor, Make)
+3) Вызови wordstat_get_top_requests в user-mcp-kv для проверки показов в месяц и LSI-ключей
+4) python scripts/excalibur_blog_scout_helper.py --check-query "<запрос>" (защита от каннибализации)
+5) Сделай карточку темы и допиши (append) её в конец memory/topics/blog-topics.md.
+```
 
 ### ① Research
 
