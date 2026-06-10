@@ -18,14 +18,15 @@ python scripts/excalibur_blog_utility_gate.py --topic-id {ID}
 
 ## Твои задачи
 
-1. Прочитать `research-context.json`, `research-serp.json` (после shell шага 0).
-2. Вызвать инструмент `wordstat_get_top_requests` на сервере `user-mcp-kv` для `primary_query` темы.
+1. Прочитать `research-context.json` (после shell шага 0).
+2. Вызвать инструмент `wordstat_get_top_requests` на сервере `user-mcp-kv` для `primary_query` темы и смежных запросов.
    - Собрать точный спрос (число показов в месяц) и сопутствующие LSI-ключи.
    - Если API вернул ошибку 401 (токен устарел) — зафиксировать предупреждение `⚠️ WORDSTAT AUTH WARNING` и ссылку на авторизацию (см. SKILL.md). Не выдумывать цифры спроса!
-3. Дочитать SERP; сверить с `memory/brief/fact-bank.md`.
-4. **Угол только практический:** что сделает читатель после гайда (не новость, не «вообще про»).
-5. Заполнить `research-notes.md`: SERP, данные Яндекс Вордстат, факты с URL, **action_outline** (5–9 шагов), **reader_outcome**, **utility_verdict: PASS**.
-6. Handoff `=== EXCALIBUR BLOG RESEARCH ===`.
+3. Выполнить **поиск в реальном времени через инструменты WebSearch Курсора** по целевым запросам темы для глубинного анализа конкурентов. Игнорировать утиный `research-serp.json`, если данные там устарели или неполны.
+4. Дочитать SERP; сверить с `memory/brief/fact-bank.md`.
+5. **Угол только практический:** что сделает читатель после гайда (не новость, не «вообще про»).
+6. Заполнить `research-notes.md`: SERP (из WebSearch Курсора), точные данные Яндекс Вордстат, факты с URL, **action_outline** (5–9 шагов), **reader_outcome**, **utility_verdict: PASS**.
+7. Handoff `=== EXCALIBUR BLOG RESEARCH ===`.
 
 ## Не твоя зона
 
