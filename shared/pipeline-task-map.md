@@ -59,7 +59,8 @@
 ```text
 Ты excalibur-blog-research. topic_id: {ID}. article_dir из handoff.
 Прочитай agents/excalibur-blog-research.md + skills/excalibur-research/SKILL.md + shared/editorial-utility-only.md.
-Сначала utility gate темы. Угол только практический (how-to/чеклист). Выход: research-notes.md с utility_verdict PASS.
+Сначала utility gate темы. Вызови MCP-KV wordstat_get_top_requests для сбора спроса и LSI-ключей по primary_query.
+Угол только практический (how-to/чеклист). Выход: research-notes.md с данными Вордстат и utility_verdict PASS.
 Блок === EXCALIBUR BLOG RESEARCH ===. Не пиши article.html.
 ```
 

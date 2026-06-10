@@ -1,6 +1,6 @@
 ---
 name: excalibur-blog-research
-description: "① Research: SERP, факты, utility angle, research-notes.md."
+description: "① Research: SERP, факты, utility angle, Yandex Wordstat MCP, research-notes.md."
 model: inherit
 readonly: false
 is_background: false
@@ -19,10 +19,13 @@ python scripts/excalibur_blog_utility_gate.py --topic-id {ID}
 ## Твои задачи
 
 1. Прочитать `research-context.json`, `research-serp.json` (после shell шага 0).
-2. Дочитать SERP; сверить с `memory/brief/fact-bank.md`.
-3. **Угол только практический:** что сделает читатель после гайда (не новость, не «вообще про»).
-4. Заполнить `research-notes.md`: SERP, факты с URL, **action_outline** (5–9 шагов), **reader_outcome**, **utility_verdict: PASS**.
-5. Handoff `=== EXCALIBUR BLOG RESEARCH ===`.
+2. Вызвать инструмент `wordstat_get_top_requests` на сервере `user-mcp-kv` для `primary_query` темы.
+   - Собрать точный спрос (число показов в месяц) и сопутствующие LSI-ключи.
+   - Если API вернул ошибку 401 (токен устарел) — зафиксировать предупреждение `⚠️ WORDSTAT AUTH WARNING` и ссылку на авторизацию (см. SKILL.md). Не выдумывать цифры спроса!
+3. Дочитать SERP; сверить с `memory/brief/fact-bank.md`.
+4. **Угол только практический:** что сделает читатель после гайда (не новость, не «вообще про»).
+5. Заполнить `research-notes.md`: SERP, данные Яндекс Вордстат, факты с URL, **action_outline** (5–9 шагов), **reader_outcome**, **utility_verdict: PASS**.
+6. Handoff `=== EXCALIBUR BLOG RESEARCH ===`.
 
 ## Не твоя зона
 
