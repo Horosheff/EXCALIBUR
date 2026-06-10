@@ -1,0 +1,6 @@
+# Teya Site
+> Modern website and SEO blog generated with Teya.
+
+## Blog Articles
+
+- [Как писать SEO-статьи и что такое GEO в одном материале?](https://example.com/blog/primer-seo-stati/): SEO-статья закрывает запрос человека и упакована для AI-ответов: lead 350–500 знаков, атомарные H2, BlogPosting + FAQPage, llms.txt. Объём — по SERP, не по мифической норме.

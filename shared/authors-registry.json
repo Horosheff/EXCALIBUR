@@ -1,0 +1,55 @@
+{
+  "registry_version": "1.0",
+  "comment": "Teya E-E-A-T Authors Registry. Provides authoritative profiles for article attribution and sameAs schema.org generation.",
+  "authors": [
+    {
+      "id": "alexander-smirnov",
+      "name_ru": "Александр Смирнов",
+      "name_en": "Alexander Smirnov",
+      "job_title_ru": "Ведущий архитектор ИИ-систем и автоматизации Teya",
+      "job_title_en": "Lead AI Systems & Automation Architect at Teya",
+      "bio_short_ru": "Эксперт по интеграции больших языковых моделей (LLM) и созданию интеллектуальных агентов с 8-летним опытом в enterprise-разработке.",
+      "bio_long_ru": "Александр Смирнов специализируется на проектировании отказоустойчивых ИИ-решений, автоматизации бизнес-процессов с использованием Agentic AI и разработке кастомных MCP-серверов. Регулярный спикер ИИ-конференций и автор публикаций по практическому внедрению генеративного ИИ в промышленный сектор.",
+      "expertise_tags": ["ai_automation", "mcp", "agentic_workflows", "llm_integration", "architecture", "make_integromat", "n8n"],
+      "avatar_url": "https://teya.ai/assets/team/alexander-smirnov.jpg",
+      "sameAs": [
+        "https://github.com/alex-smirnov-teya",
+        "https://habr.com/ru/users/alex_smirnov_ai/",
+        "https://scholar.google.com/citations?user=dummy_smirnov",
+        "https://www.linkedin.com/in/alexander-smirnov-dummy-ai"
+      ]
+    },
+    {
+      "id": "elena-kovaleva",
+      "name_ru": "Елена Ковалева",
+      "name_en": "Elena Kovaleva",
+      "job_title_ru": "Главный эксперт по поисковой оптимизации и GEO/AEO-стратегиям",
+      "job_title_en": "Head of SEO & GEO/AEO Optimization at Teya",
+      "bio_short_ru": "Специалист по продвижению в поисковых системах нового поколения, ИИ-ответах (Google SGE/AIO, Perplexity, Яндекс Нейро).",
+      "bio_long_ru": "Елена руководит направлением поисковой оптимизации и AI Engine Optimization (AEO) в Teya. Обладает более чем 10-летним опытом работы в SEO. Автор методик по оптимизации структуры сайтов под семантический поиск, микроразметке Schema.org повышенной сложности и защите от ИИ-спама.",
+      "expertise_tags": ["seo", "geo", "aeo", "schema_org", "wordstat", "semantic_core", "copywriting"],
+      "avatar_url": "https://teya.ai/assets/team/elena-kovaleva.jpg",
+      "sameAs": [
+        "https://habr.com/ru/users/elena_kovaleva_seo/",
+        "https://github.com/elena-kov-seo",
+        "https://www.linkedin.com/in/elena-kovaleva-dummy-seo"
+      ]
+    },
+    {
+      "id": "dmitry-petrov",
+      "name_ru": "Дмитрий Петров",
+      "name_en": "Dmitry Petrov",
+      "job_title_ru": "Руководитель направления CRM-систем и интеграции веб-сервисов",
+      "job_title_en": "Head of CRM Systems & Web Integrations",
+      "bio_short_ru": "Эксперт по сквозной аналитике, проектированию воронки продаж и интеграции веб-форм с внешними CRM (amoCRM, Bitrix24, Telegram).",
+      "bio_long_ru": "Дмитрий отвечает за бесшовную связку лидогенерации на сайтах с внутренними CRM-системами клиентов. Эксперт по настройке SMTP-серверов, антиспам-фильтрации (Cloudflare, Turnstile) и внедрению систем сквозной бизнес-аналитики.",
+      "expertise_tags": ["crm", "integrations", "smtp", "anti_spam", "analytics", "conversion", "lead_generation"],
+      "avatar_url": "https://teya.ai/assets/team/dmitry-petrov.jpg",
+      "sameAs": [
+        "https://github.com/dmitry-petrov-crm",
+        "https://habr.com/ru/users/dmitry_petrov_integrations/",
+        "https://www.linkedin.com/in/dmitry-petrov-dummy-crm"
+      ]
+    }
+  ]
+}

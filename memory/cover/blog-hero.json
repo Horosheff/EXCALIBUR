@@ -1,0 +1,27 @@
+{
+  "hero_id": "blog-host",
+  "name_ru": "Ведущий блога",
+  "reference_image": "memory/cover/assets/blog-hero-reference.png",
+  "reference_notes": "Reference = только лицо (очки, quiff, борода). Одежду агент меняет свободно под крючок и тему статьи — не копировать костюм с фото.",
+  "visual_lock": {
+    "face": "овальное лицо, дружелюбная улыбка",
+    "glasses": "круглые чёрные очки",
+    "hair": "густая светло-русый/пепельный quiff, зачёс вверх и вправо",
+    "beard": "аккуратная короткая борода с сединой",
+    "energy": "харизматичный ведущий, ироничный, не клоун"
+  },
+  "outfit_rule": "Свободный выбор агента: костюм, casual, мем-костюм, реквизит — по cover_hook и scene_hint. Reference photo outfit is NOT mandatory.",
+  "reference_outfit_hint": "На эталонном фото — красный пиджак и бабочка; это лишь один из вариантов, не lock.",
+  "prompt_fragment": "Blog host on COVER ONLY: preserve EXACT face likeness from reference — round black glasses, ash-blonde quiff, salt-and-pepper beard. Outfit, pose, props: agent's creative choice for the meme hook — do NOT copy reference photo clothing unless scene_hint asks.",
+  "cover_hook_rules": [
+    "Обложка = крючок: провокация, узнаваемая боль SEOшника, желание кликнуть",
+    "Крупный русский meme-caption на обложке (2–6 слов), читаемый",
+    "Герой смотрит в камеру или жестом указывает на текст",
+    "Не спойлерить весь гайд — намекнуть на конфликт SEO vs GEO / «текст не читают»",
+    "Одежда героя — на усмотрение агента (мем-костюм, casual, пиджак, худи…) — лицо с reference обязательно",
+    "Design code: fake скрины (Wordstat, отзывы, Telegram), рваная бумага, скотч, розовый маркер, разные мем-реакции — «сделал человек», 16:9"
+  ],
+  "reference_url_hosted": "https://files.catbox.moe/yjlmip.png",
+  "reference_url_source": "catbox",
+  "reference_url_updated_at": "2026-06-10T02:47:57+00:00"
+}

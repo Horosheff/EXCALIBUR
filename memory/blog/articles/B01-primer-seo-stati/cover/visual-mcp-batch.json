@@ -1,0 +1,53 @@
+{
+  "pipeline_version": "split_v2",
+  "article_dir": "memory/blog/articles/B01-primer-seo-stati",
+  "reference_url_hosted": "https://files.catbox.moe/yjlmip.png",
+  "jobs": [
+    {
+      "slot": "cover",
+      "output_file": "cover/cover.png",
+      "tool": "gpt-image-2",
+      "mcp_args": {
+        "prompt": "Russian internet meme collage illustration, ironic humor, cutout stickers, reaction faces, drake-format panels, pepe-adjacent absurdity but original characters, bold Cyrillic meme captions in Impact-style white text with black outline, layered scraps, glitch accents, colors #FAFAF7 #E85D4C #1A1A2E #FFD93D,\nCOVER ONLY — single 16:9 image, not a grid.\nSame recurring blog host character in every panel: man with round black glasses, voluminous ash-blonde quiff hair, salt-and-pepper short beard, charismatic presenter energy. Keep face recognizable; change pose, props, meme costume per panel.\nCRITICAL: preserve EXACT face likeness from reference photo — same glasses, quiff hair, salt-and-pepper beard.\nClickbait hook scene: герой с reference-лицом, шок/ирония SEOшника, Wordstat + ноутбук, крючок на клик.\nLarge readable Cyrillic meme caption: \"15k ключей — 0 прочтений?\".\nHook idea: SEO-текст, который люди дочитают — миф или workflow?.\nRussian internet meme collage, ironic SEO humor, host points at caption or reacts dramatically.\nsingle canvas 2048x1152 pixels, exact\nNegative: English text, Latin letters, watermark, logo, blurry, generic western stock photo, extra fingers, boring corporate infographic, no humor, no text at all, unreadable gibberish text",
+        "input_urls": [
+          "https://files.catbox.moe/yjlmip.png"
+        ],
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    },
+    {
+      "slot": "inline_1",
+      "output_file": "cover/inline-01.png",
+      "visual_type": "comparison_table_ui",
+      "tool": "gpt-image-2",
+      "mcp_args": {
+        "prompt": "Professional Russian blog editorial UI mockup, clean SaaS dashboard aesthetic, light background #FAFAF7, accent #E85D4C, readable Cyrillic labels, 16:9 widescreen screenshot style,\nArticle section H2: «Зачем SEO и GEO в одной статье».\nТаблица «SEO vs GEO» к секции «Зачем SEO и GEO в одной статье»: критерии, цели, что видит человек vs AI\nlooks like a helpful article illustration not a meme, subtle shadow, high detail UI elements, no human face required\nNegative: meme impact font, cartoon mascot, watermark, English UI labels, blurry text",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    },
+    {
+      "slot": "inline_2",
+      "output_file": "cover/inline-02.png",
+      "visual_type": "workflow_diagram",
+      "tool": "gpt-image-2",
+      "mcp_args": {
+        "prompt": "Clean Russian infographic workflow diagram, numbered steps connected by arrows, editorial blog style, colors #FAFAF7 #1A1A2E #E85D4C #FFD93D, 16:9,\nArticle section H2: «Структура longread: от семантики до читабельности».\n6 шагов workflow longread к «Структура longread: от семантики до читабельности»: интент → семантика → outline → lead → факты → FAQ\nreadable Cyrillic step titles, Notion/Figma-like clarity, practical how-to feel, no meme faces\nNegative: meme, face closeup, watermark, chaotic collage, English text",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    },
+    {
+      "slot": "inline_3",
+      "output_file": "cover/inline-03.png",
+      "visual_type": "schema_faq_ui",
+      "tool": "gpt-image-2",
+      "mcp_args": {
+        "prompt": "Russian SEO article UI mockup showing FAQ accordion block and JSON-LD schema panel side by side, developer-blog aesthetic, light theme, 16:9,\nArticle section H2: «FAQ и schema: зачем и как».\nUI mockup FAQ + JSON-LD schema для «FAQ и schema: зачем и как»\nCyrillic FAQ questions visible, structured data hint, helpful not humorous, no meme\nNegative: meme, cartoon face, watermark, English-only UI",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ]
+}
