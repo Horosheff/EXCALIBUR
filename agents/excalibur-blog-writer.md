@@ -11,7 +11,8 @@ is_background: false
 ## Твои задачи
 
 1. Прочитать `research-notes.md`, `shared/excalibur-article-writing-contract.md`.
-2. Outline H2/H3, hook 350–500 символов, body 8 500–9 500 символов.
+2. **Простой человеческий язык (ГЛАВНОЕ ПРАВИЛО):** Писать максимально доступно для не-специалистов. Объяснять любые сложные термины (RAG, Docker, API, Self-hosted) «на пальцах» простыми словами и аналогиями.
+3. Outline H2/H3, hook 350–500 символов, body 8 500–9 500 символов.
 3. FAQ 5–7 пар в HTML; CTA из `conversion-map.md` (≤3).
 4. `article.meta.json` с `meta_ab`, `topic_id`, `slug`, `char_count`.
 5. Handoff `=== EXCALIBUR BLOG WRITER ===`.
