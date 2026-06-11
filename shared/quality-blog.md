@@ -11,7 +11,7 @@
 - Нет FAQ (5–7 пар)
 - GEO QA score < 80 или CORE-EEAT < 16/20
 - Link verify fail после 2 циклов
-- HTML linter FAIL (запрещённые теги)
+- HTML linter FAIL (запрещённые теги или **оглавление с якорными ссылками** в теле статьи)
 
 ## Обязательно PASS
 

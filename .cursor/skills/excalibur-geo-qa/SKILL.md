@@ -16,7 +16,7 @@ python scripts/excalibur_blog_fact_checker.py \
   memory/blog/articles/<dir>/article.html \
   -o memory/blog/articles/<dir>/fact-check-report.json
 
-python scripts/excalibur_link_verify.py \
+python scripts/excalibur_blog_link_verify.py \
   memory/blog/articles/<dir>/article.html \
   -o memory/blog/articles/<dir>/link-verify.json \
   --site-base https://YOUR_SITE
@@ -24,7 +24,11 @@ python scripts/excalibur_link_verify.py \
 python scripts/excalibur_blog_html_linter.py \
   memory/blog/articles/<dir>/article.html \
   -o memory/blog/articles/<dir>/html-linter-report.json
+```
 
+HTML linter **блокирует оглавление в теле** (`<ol>/<ul>` с 3+ ссылками `href="#..."`). При fail — Writer удаляет TOC (после TL;DR сразу `<p>`).
+
+```bash
 python scripts/excalibur_blog_slop_detector.py \
   memory/blog/articles/<dir>/article.html \
   -o memory/blog/articles/<dir>/slop-detector-report.json

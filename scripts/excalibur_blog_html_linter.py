@@ -8,9 +8,31 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
+from typing import Any
+
+
+def detect_anchor_toc(html: str) -> list[str]:
+    """Fail if article contains in-body table of contents (anchor link list)."""
+    errors: list[str] = []
+    # Block: ol/ul with 3+ li containing href="#..."
+    list_blocks = re.findall(r"<(?:ol|ul)[^>]*>(.*?)</(?:ol|ul)>", html, flags=re.IGNORECASE | re.DOTALL)
+    for block in list_blocks:
+        anchor_links = re.findall(
+            r'<li[^>]*>\s*<a\s+[^>]*href=["\']#([^"\']+)["\']',
+            block,
+            flags=re.IGNORECASE,
+        )
+        if len(anchor_links) >= 3:
+            errors.append(
+                "Forbidden in-body TOC: list with 3+ anchor links to headings "
+                f"(#{', #'.join(anchor_links[:5])}{'...' if len(anchor_links) > 5 else ''}). "
+                "Remove <ol>/<ul> navigation after TL;DR; see excalibur-article-writing-contract.md block 3."
+            )
+    return errors
 
 
 class HTMLTagLinter(HTMLParser):
@@ -66,6 +88,7 @@ def lint_html_file(html_path: Path, whitelist: set[str]) -> dict[str, Any]:
     linter = HTMLTagLinter(whitelist)
     linter.feed(html_content)
     linter.check_unclosed_tags()
+    linter.errors.extend(detect_anchor_toc(html_content))
 
     return {
         "file": str(html_path.name),
