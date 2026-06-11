@@ -25,7 +25,7 @@
         "@id": "https://example.com/#author-elena-kovaleva",
         "name": "Елена Ковалева",
         "jobTitle": "Главный эксперт по поисковой оптимизации и GEO/AEO-стратегиям",
-        "image": "https://teya.ai/assets/team/elena-kovaleva.jpg",
+        "image": "https://kv-ai.ru/assets/team/elena-kovaleva.jpg",
         "worksFor": {
           "@type": "Organization",
           "name": "Пример Блога",

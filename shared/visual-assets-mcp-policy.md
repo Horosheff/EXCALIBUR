@@ -1,4 +1,4 @@
-# Teya Visual Assets MCP Policy
+# Excalibur BLOG Visual Assets MCP Policy
 
 Этот контракт действует для всех агентов, которые проектируют, собирают или проверяют сайт.
 

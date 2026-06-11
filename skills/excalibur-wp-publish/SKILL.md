@@ -25,10 +25,10 @@ description: Excalibur BLOG WP Publish — публикация статьи в 
 ```bash
 python scripts/excalibur_link_verify.py <article.html> -o link-verify.json --site-base $PUBLIC_SITE_URL
 
-python scripts/teya_excalibur_wp_publish.py \
+python scripts/excalibur_blog_wp_publish.py \
   --article-dir memory/blog/articles/<topic_id>-<slug> --dry-run
 
-python scripts/teya_excalibur_wp_publish.py \
+python scripts/excalibur_blog_wp_publish.py \
   --article-dir memory/blog/articles/<topic_id>-<slug>
 ```
 

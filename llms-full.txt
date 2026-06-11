@@ -1,4 +1,4 @@
-# Teya Site - Full LLM Knowledge Base
+# Maya AI — блог «Ковчег» - Full LLM Knowledge Base
 This file contains full plain-text articles optimized for AI reasoning and semantic search.
 
 ---

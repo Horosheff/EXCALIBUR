@@ -1,6 +1,6 @@
 # Excalibur — AI-slop blocklist
 
-Список для post-write scan (из практик [justinbao19/blog-writing-skill](https://github.com/justinbao19/blog-writing-skill) и Teya anti-haltura).
+Список для post-write scan (из практик [justinbao19/blog-writing-skill](https://github.com/justinbao19/blog-writing-skill) и Excalibur BLOG anti-haltura).
 
 ## Veto phrases (русский) — удалить или переписать
 

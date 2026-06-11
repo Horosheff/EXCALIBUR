@@ -1,6 +1,6 @@
 # Excalibur BLOG — quality standard
 
-Стандарт качества **только для статей блога**. Excalibur BLOG автономен — без Teya/AURA/Aurora gates.
+Стандарт качества **только для статей блога**. Excalibur BLOG автономен — со своими собственными gates.
 
 ## Blockers (статья)
 

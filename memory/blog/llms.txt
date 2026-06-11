@@ -1,6 +1,7 @@
-# Teya Site
-> Modern website and SEO blog generated with Teya.
+# Maya AI — блог «Ковчег»
+> Блог про автоматизацию бизнеса на Make.com, AI-агентов, n8n, вайбкодинг и GEO/AEO SEO.
 
 ## Blog Articles
 
-- [Как писать SEO-статьи и что такое GEO в одном материале?](https://example.com/blog/primer-seo-stati/): SEO-статья закрывает запрос человека и упакована для AI-ответов: lead 350–500 знаков, атомарные H2, BlogPosting + FAQPage, llms.txt. Объём — по SERP, не по мифической норме.
+- [Как писать SEO-статьи и что такое GEO в одном материале?](https://mayai.ru/blog/primer-seo-stati/): SEO-статья закрывает запрос человека и упакована для AI-ответов: lead 350–500 знаков, атомарные H2, BlogPosting + FAQPage, llms.txt. Объём — по SERP, не по мифической норме.
+- [Как настроить ИИ-агентов в n8n для автоматизации бизнеса?](https://mayai.ru/blog/avtomatizaciya-n8n-ai-agents/): Автоматизация n8n с ИИ-агентами: Chat Trigger, AI Agent node, System Message, tools и Simple Memory. Когда выбрать Make.com вместо self-host n8n.

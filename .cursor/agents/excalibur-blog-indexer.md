@@ -10,8 +10,8 @@ is_background: false
 
 ## Твои задачи
 
-1. `python scripts/teya_excalibur_interlinker.py --apply --article-dir <dir>`
-2. `python scripts/teya_excalibur_llms_generator.py --blog-dir memory/blog/articles`
+1. `python scripts/excalibur_blog_interlinker.py --apply --article-dir <dir>`
+2. `python scripts/excalibur_blog_llms_generator.py --blog-dir memory/blog/articles`
 3. `promotion-checklist.md` из template.
 4. Handoff `=== EXCALIBUR BLOG INDEXER ===`.
 

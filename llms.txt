@@ -1,5 +1,5 @@
-# Teya Site
-> Modern website and SEO blog generated with Teya.
+# Maya AI — блог «Ковчег»
+> Практический блог по автоматизации бизнеса на Make.com, вайбкодингу и ИИ-агентам.
 
 ## Blog Articles
 

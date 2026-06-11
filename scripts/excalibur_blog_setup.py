@@ -70,6 +70,10 @@ def main() -> int:
     ftp_port = get_input("FTP Порт", "21")
     ftp_user = get_input("FTP Пользователь", "")
     ftp_pass = get_input("FTP Пароль", "")
+    ftp_root = get_input(
+        "FTP путь к корню WordPress (где wp-load.php)",
+        "/mrrutrnc.beget.tech/public_html/",
+    )
     
     allow_publish_input = get_input("Разрешить автоматическую публикацию на боевой сайт? (yes/no)", "no")
     allow_publish = "yes" if allow_publish_input.lower() in {"yes", "y", "да"} else "no"
@@ -104,6 +108,7 @@ FTP_HOST={ftp_host}
 FTP_PORT={ftp_port}
 FTP_USER={ftp_user}
 FTP_PASS={ftp_pass}
+FTP_ROOT={ftp_root}
 EXCALIBUR_BLOG_ALLOW_PUBLISH={allow_publish}
 """
     env_path.write_text(env_content, encoding="utf-8")
@@ -118,6 +123,7 @@ FTP_HOST=ftp.example.com
 FTP_PORT=21
 FTP_USER=
 FTP_PASS=
+FTP_ROOT=/public_html/
 EXCALIBUR_BLOG_ALLOW_PUBLISH=no
 """
         env_example_path.write_text(example_content, encoding="utf-8")

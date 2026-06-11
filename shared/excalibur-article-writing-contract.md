@@ -317,7 +317,7 @@ Excalibur BLOG следует этому контракту для каждой 
   - `author`: объект `Person` с подробным описанием, строго соответствующим реестру авторов `shared/authors-registry.json` (по совпадающему `author_id` из `article.meta.json`):
     - `name`: имя эксперта из реестра (например, Александр Смирнов).
     - `jobTitle`: должность эксперта из реестра.
-    - `worksFor`: название бренда (Teya).
+    - `worksFor`: название бренда (например, Maya AI).
     - `sameAs`: массив ссылок на авторитетные профили автора (LinkedIn, GitHub, Habr) из реестра для подтверждения E-E-A-T.
 2. **Разметка частых вопросов (`FAQPage`):**
   - Добавляется, если в статье есть FAQ. `mainEntity` содержит массив `Question` и `Answer`, текст которых должен строго соответствовать видимому контенту в HTML.
@@ -337,10 +337,10 @@ Excalibur BLOG следует этому контракту для каждой 
 3. Объём 8 500–9 500 символов (HTML без тегов при подсчёте)
 4. Факты не выдуманы; режим A/B соблюдён; автор назначен по реестру `shared/authors-registry.json`
 5. FAQ 5–7; CTA ≤ 3; нет запрещённых штампов и эмодзи
-6. Разноплановые анкоры `"anchor_variants"` заполнены в `article.meta.json` и применены через `teya_excalibur_interlinker.py`
+6. Разноплановые анкоры `"anchor_variants"` заполнены в `article.meta.json` и применены через `excalibur_blog_interlinker.py`
 7. `research-notes.md` с источниками; `article-qa.md` PASS; `link-verify.json` pass
-8. Скрипт `teya_excalibur_html_linter.py` дал PASS (нет битых тегов)
-9. Скрипт `teya_excalibur_slop_detector.py` дал PASS/WARNING (нет перебора клише)
-10. Скрипт `teya_excalibur_cannibalization_guard.py` дал PASS (нет критической каннибализации ключевых слов)
+8. Скрипт `excalibur_blog_html_linter.py` дал PASS (нет битых тегов)
+9. Скрипт `excalibur_blog_slop_detector.py` дал PASS/WARNING (нет перебора клише)
+10. Скрипт `excalibur_blog_cannibalization_guard.py` дал PASS (нет критической каннибализации ключевых слов)
 11. `schema.jsonld` содержит E-E-A-T автора по реестру; `promotion-checklist.md` сформирован.
 

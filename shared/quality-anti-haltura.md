@@ -1,6 +1,6 @@
-﻿# Teya Anti-Haltura Quality Standard
+﻿# Excalibur BLOG Anti-Haltura Quality Standard
 
-Этот файл — жёсткий стандарт качества для агентов Teya.
+Этот файл — жёсткий стандарт качества для агентов Excalibur BLOG.
 
 Если результат нарушает этот стандарт, агент обязан ставить `❌ BLOCKER` или `⚠️ FIXES NEEDED`, а не принимать работу как готовую.
 

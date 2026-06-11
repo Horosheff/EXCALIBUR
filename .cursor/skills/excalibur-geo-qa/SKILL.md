@@ -12,7 +12,7 @@ description: Excalibur BLOG GEO QA — fact-check, link verify, linter, slop, ca
 ## Скрипты (обязательно)
 
 ```bash
-python scripts/teya_excalibur_fact_checker.py \
+python scripts/excalibur_blog_fact_checker.py \
   memory/blog/articles/<dir>/article.html \
   -o memory/blog/articles/<dir>/fact-check-report.json
 
@@ -21,15 +21,15 @@ python scripts/excalibur_link_verify.py \
   -o memory/blog/articles/<dir>/link-verify.json \
   --site-base https://YOUR_SITE
 
-python scripts/teya_excalibur_html_linter.py \
+python scripts/excalibur_blog_html_linter.py \
   memory/blog/articles/<dir>/article.html \
   -o memory/blog/articles/<dir>/html-linter-report.json
 
-python scripts/teya_excalibur_slop_detector.py \
+python scripts/excalibur_blog_slop_detector.py \
   memory/blog/articles/<dir>/article.html \
   -o memory/blog/articles/<dir>/slop-detector-report.json
 
-python scripts/teya_excalibur_cannibalization_guard.py \
+python scripts/excalibur_blog_cannibalization_guard.py \
   --article-dir memory/blog/articles/<dir>
 ```
 

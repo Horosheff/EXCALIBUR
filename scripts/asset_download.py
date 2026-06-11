@@ -9,7 +9,7 @@ import urllib.request
 
 
 DEFAULT_HEADERS = {
-    "User-Agent": "TeyaAssetDownloader/1.0",
+    "User-Agent": "ExcaliburBlogAssetDownloader/1.0",
     "Cache-Control": "no-cache",
 }
 

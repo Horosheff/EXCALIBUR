@@ -1,6 +1,6 @@
 ﻿# Excalibur — GEO writing checklist
 
-Адаптация практик из [aaron-he-zhu/seo-geo-claude-skills](https://github.com/aaron-he-zhu/seo-geo-claude-skills) (`geo-content-optimizer`, `seo-content-writer`) под Teya blog HTML.
+Адаптация практик из [aaron-he-zhu/seo-geo-claude-skills](https://github.com/aaron-he-zhu/seo-geo-claude-skills) (`geo-content-optimizer`, `seo-content-writer`) под Excalibur BLOG HTML.
 
 ## Answer-first (первые 60–100 слов)
 
@@ -56,7 +56,7 @@
 
 - В `article.meta.json` заполнен блок `"anchor_variants"` (3-5 естественных фраз для ссылок на эту статью из других текстов)
 - Использованы разнообразные анкоры (прямые, разбавленные, брендовые) вместо одного и того же коммерческого ключа
-- Запущен `teya_excalibur_interlinker.py --apply` для автоматического связывания по диверсифицированным анкорам
+- Запущен `excalibur_blog_interlinker.py --apply` для автоматического связывания по диверсифицированным анкорам
 
 ## Anti patterns
 

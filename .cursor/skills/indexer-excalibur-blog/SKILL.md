@@ -10,10 +10,10 @@ description: Excalibur BLOG Indexer — interlink между статьями + 
 ## Shell
 
 ```bash
-python scripts/teya_excalibur_interlinker.py --apply \
+python scripts/excalibur_blog_interlinker.py --apply \
   --article-dir memory/blog/articles/<topic_id>-<slug>
 
-python scripts/teya_excalibur_llms_generator.py \
+python scripts/excalibur_blog_llms_generator.py \
   --blog-dir memory/blog/articles
 ```
 
