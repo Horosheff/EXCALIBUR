@@ -21,7 +21,7 @@
 | ④a | `excalibur-blog-cover` | ONE MCP quad i2i + inline | [cover](excalibur-blog-cover.md) | [cover-excalibur-blog](../skills/cover-excalibur-blog/SKILL.md) |
 | ④b | `excalibur-blog-schema` | JSON-LD schema | [schema](excalibur-blog-schema.md) | [schema-excalibur-blog](../skills/schema-excalibur-blog/SKILL.md) |
 | ⑤ | `excalibur-blog-indexer` | Interlink + llms | [indexer](excalibur-blog-indexer.md) | [indexer-excalibur-blog](../skills/indexer-excalibur-blog/SKILL.md) |
-| ⑥ | `excalibur-blog-publish` | WP publish | [publish](excalibur-blog-publish.md) | [excalibur-wp-publish](../skills/excalibur-wp-publish/SKILL.md) |
+| ⑥ | `excalibur-blog-publish` | WP publish (post, featured, inline, schema) | [publish](excalibur-blog-publish.md) | [publish-excalibur-blog](../skills/publish-excalibur-blog/SKILL.md) |
 
 **④a + ④b** — параллельно, одним сообщением Директора (после ③ PASS).
 

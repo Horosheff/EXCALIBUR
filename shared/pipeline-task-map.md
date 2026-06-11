@@ -20,7 +20,7 @@
   ├─ ④b Task(excalibur-blog-schema) ─┘
   │
   ├─ ⑤ Task(excalibur-blog-indexer)
-  └─ ⑥ Task(excalibur-blog-publish)   ← только publish=yes
+  └─ ⑥ Task(excalibur-blog-publish)   ← автоматически после Indexer (skip только publish:no)
 ```
 
 ## Таблица распределения
@@ -127,12 +127,14 @@ schema.jsonld BlogPosting+FAQPage. Fragment .cursor/excalibur-blog-fragments/sch
 interlinker --apply + llms generator. Блок === EXCALIBUR BLOG INDEXER === в handoff.
 ```
 
-### ⑥ Publish
+### ⑥ Publish (автоматически после Indexer)
 
 ```text
-Ты excalibur-blog-publish. topic_id: {ID}.
-Прочитай agents/excalibur-blog-publish.md + skills/excalibur-wp-publish/SKILL.md.
-Dry-run затем publish. Обнови shared/published-articles.md. Блок === EXCALIBUR BLOG PUBLISH ===.
+Ты excalibur-blog-publish. topic_id: {ID}. article_dir из handoff.
+Прочитай agents/excalibur-blog-publish.md + skills/publish-excalibur-blog/SKILL.md + shared/excalibur-wp-publish-contract.md.
+Preflight link-verify → dry-run → publish → обнови shared/published-articles.md + memory/blog/wp-publish-log.md.
+Блок === EXCALIBUR BLOG PUBLISH === + permalink в PIPELINE DONE.
+При HTTP timeout bootstrap — WebFetch fallback (см. skill).
 ```
 
 ## Файлы субагентов

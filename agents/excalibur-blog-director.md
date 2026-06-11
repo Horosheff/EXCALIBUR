@@ -51,7 +51,7 @@ python3 scripts/excalibur_blog_research_start.py --topic-id <id>
 3. **ПАРАЛЛЕЛЬНО** Task cover + Task schema (после QA PASS)
 4. Перенос fragments → handoff
 5. Task indexer
-6. Task publish (если `EXCALIBUR_BLOG_ALLOW_PUBLISH=yes`)
+6. Task publish — **автоматически** после Indexer; skill `publish-excalibur-blog`; skip только при `publish: no`
 
 Полный сценарий: [skills/director-excalibur-blog/SKILL.md](../skills/director-excalibur-blog/SKILL.md)  
 Субагенты: [FOR-AGENTS.md](FOR-AGENTS.md) · Карта задач: [shared/pipeline-task-map.md](../shared/pipeline-task-map.md)

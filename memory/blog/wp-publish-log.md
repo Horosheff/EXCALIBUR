@@ -69,3 +69,30 @@ OK featured_image=13325
 OK schema_meta=1
 permalink=https://mayai.ru/avtomatizaciya-n8n-ai-agents/
 ```
+
+---
+
+## 2026-06-11 — B03 podklyuchenie-mcp-cursor — **PASS**
+
+| Field | Value |
+|-------|-------|
+| topic_id | B03 |
+| slug | podklyuchenie-mcp-cursor |
+| verdict | **PASS** |
+| post_id | 13335 |
+| featured_image_id | 13336 |
+| inline_images | 13337, 13338, 13339 |
+| permalink | https://mayai.ru/podklyuchenie-mcp-cursor/ |
+| trigger | `/excalibur-blog-run topic_id: B03 publish: yes` (publish вручную после fix оркестратора) |
+
+### Result
+
+```
+OK post=13335 slug=podklyuchenie-mcp-cursor
+OK featured_image=13336
+OK schema_meta=1
+OK inline_image_upload=13337 src=cover/inline-01.png
+OK inline_image_upload=13338 src=cover/inline-02.png
+OK inline_image_upload=13339 src=cover/inline-03.png
+permalink=https://mayai.ru/podklyuchenie-mcp-cursor/
+```

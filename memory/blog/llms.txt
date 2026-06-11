@@ -1,7 +1,8 @@
 # Maya AI — блог «Ковчег»
-> Блог про автоматизацию бизнеса на Make.com, AI-агентов, n8n, вайбкодинг и GEO/AEO SEO.
+> Практический блог по автоматизации бизнеса на Make.com, вайбкодингу и ИИ-агентам.
 
 ## Blog Articles
 
 - [Как писать SEO-статьи и что такое GEO в одном материале?](https://mayai.ru/blog/primer-seo-stati/): SEO-статья закрывает запрос человека и упакована для AI-ответов: lead 350–500 знаков, атомарные H2, BlogPosting + FAQPage, llms.txt. Объём — по SERP, не по мифической норме.
 - [Как настроить ИИ-агентов в n8n для автоматизации бизнеса?](https://mayai.ru/blog/avtomatizaciya-n8n-ai-agents/): Автоматизация n8n с ИИ-агентами: Chat Trigger, AI Agent node, System Message, tools и Simple Memory. Когда выбрать Make.com вместо self-host n8n.
+- [Как подключить MCP-серверы в Cursor для автоматизации?](https://mayai.ru/blog/podklyuchenie-mcp-cursor/): Cursor MCP – подключение серверов через Tools & MCP или mcp.json (stdio/url), проверка статуса, allowlist и исправление красного индикатора через MCP Logs.

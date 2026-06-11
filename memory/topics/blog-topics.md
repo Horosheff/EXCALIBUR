@@ -54,3 +54,25 @@ python scripts/excalibur_blog_utility_gate.py --topic-id <ID>
 
 ---
 
+## B03 — Подключение MCP в Cursor
+
+- **priority:** P0
+- **slug:** podklyuchenie-mcp-cursor
+- **h1:** Как подключить MCP-серверы в Cursor: пошаговая инструкция для автоматизации
+- **primary_query:** cursor mcp
+- **secondary_queries:** mcp сервер для cursor, как подключить mcp к cursor, cursor ai mcp, настройка mcp сервера
+- **search_intent:** how_to
+- **article_mode:** B
+- **h2_outline:**
+  1. Что такое MCP и зачем подключать серверы в Cursor в 2026 году
+  2. Где лежит конфиг: ~/.cursor/mcp.json и .cursor/mcp.json в проекте
+  3. Пошаговое подключение stdio-сервера через npx (пример mcp.json)
+  4. Проверка в Settings → Tools & MCP и настройка безопасности (auto-run, allowlist)
+  5. Топ MCP-серверов для автоматизации: браузер, Wordstat, WordPress, Figma
+  6. Troubleshooting: красный статус, spawn ENOENT, ошибки JSON и логи Output
+- **faq_hints:** как подключить mcp к cursor; какие mcp серверы лучше для cursor; почему mcp сервер не подключается в cursor
+- **internal_links:** /avtomatizaciya-n8n-ai-agents/
+- **cover_scene_hint:** ноутбук с IDE Cursor, вокруг экрана «кубики-плагины» MCP-серверов, стикеры Browser/WordPress/Wordstat, неоновый diy-коллаж
+
+---
+

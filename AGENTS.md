@@ -15,7 +15,7 @@ shell today + research_start
   → excalibur-blog-geo-qa
   → excalibur-blog-cover || excalibur-blog-schema
   → excalibur-blog-indexer
-  → excalibur-blog-publish (если publish=yes)
+  → excalibur-blog-publish (автоматически после Indexer; skip только publish:no)
 ```
 
 ## Cloud Task fallback

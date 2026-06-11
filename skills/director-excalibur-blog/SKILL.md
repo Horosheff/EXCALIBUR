@@ -118,9 +118,32 @@ Task(excalibur-blog-indexer)
 
 Промпт: «interlinker --apply + llms generator. Блок === EXCALIBUR BLOG INDEXER ===.»
 
-### Шаг 6 — Publish (Task, опционально)
+### Шаг 6 — Publish (Task, **автоматически** после Indexer)
 
-Только если пользователь указал `publish=yes` и `memory/site.env.local` с `EXCALIBUR_BLOG_ALLOW_PUBLISH=yes`.
+**Парсинг параметра (в начале прогона):**
+
+- `publish: no` / `publish=no` / «без публикации» / «draft only» → **`publish_flag = no`**
+- **иначе → `publish_flag = yes`** (default: публикуем, когда пайплайн готов)
+
+Запиши в handoff: `` `publish`: yes|no ``.
+
+**Если `publish_flag = yes` (default):**
+
+1. **Обязательно** запусти `Task(excalibur-blog-publish)` сразу после Indexer.
+2. **Запрещено** завершать пайплайн со `skipped (publish=no)` без явного `publish: no`.
+3. Publish-агент читает `skills/publish-excalibur-blog/SKILL.md` + `agents/excalibur-blog-publish.md`.
+4. Если `EXCALIBUR_BLOG_ALLOW_PUBLISH != yes` — агент возвращает `❌ PUBLISH BLOCKER`, но шаг **выполнен** (не skipped).
+
+**Если `publish_flag = no`:** шаг 6 → `⏭ skipped (publish=no)`.
+
+**Промпт для Task:**
+
+```text
+Ты excalibur-blog-publish. topic_id: {ID}. article_dir из handoff.
+Прочитай agents/excalibur-blog-publish.md + skills/publish-excalibur-blog/SKILL.md + shared/excalibur-wp-publish-contract.md.
+Preflight link-verify → dry-run → publish → ledger + handoff === EXCALIBUR BLOG PUBLISH ===.
+При HTTP timeout bootstrap — WebFetch fallback (см. skill).
+```
 
 ```text
 Task(excalibur-blog-publish)

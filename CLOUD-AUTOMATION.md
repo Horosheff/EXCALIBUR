@@ -98,7 +98,7 @@ Cursor Automation → Schedule, пример:
 8. ПАРАЛЛЕЛЬНО Task(excalibur-blog-cover) + Task(excalibur-blog-schema).
    Cover/schema пишут во fragments; перенеси в handoff.
 9. Task(excalibur-blog-indexer).
-10. Если EXCALIBUR_BLOG_ALLOW_PUBLISH=yes → Task(excalibur-blog-publish) и обнови shared/published-articles.md.
+10. Task(excalibur-blog-publish) — **автоматически** после Indexer (skip только publish:no). Skill: publish-excalibur-blog. Обнови shared/published-articles.md.
 
 Fallback: если Task types недоступны — generalPurpose per role (см. AGENTS.md).
 

@@ -31,13 +31,12 @@ python scripts/excalibur_blog_slop_detector.py \
 
 python scripts/excalibur_blog_cannibalization_guard.py \
   --article-dir memory/blog/articles/<dir>
+
+python scripts/excalibur_blog_utility_gate.py \
+  --article-dir memory/blog/articles/<dir> \
+  --output utility-gate-report.json
 ```
 
-## Выход
-
-- `article-qa.md` verdict **PASS**
-- handoff: `=== EXCALIBUR BLOG GEO QA ===`
-
-**Pass:** score ≥ 80, CORE-EEAT ≥ 16/20, link-verify pass.
+**Pass:** score ≥ 80, CORE-EEAT ≥ 16/20, link-verify pass, **utility gate PASS**.
 
 Schema и cover — **не** твоя зона (отдельные субагенты после PASS).

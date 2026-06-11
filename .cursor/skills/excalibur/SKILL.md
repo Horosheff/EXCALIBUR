@@ -27,6 +27,7 @@ memory/blog/articles/<topic_id>-<slug>/
 ## Контракты
 
 - `shared/excalibur-article-writing-contract.md`
+- `shared/editorial-utility-only.md`
 - `shared/blog-cover-mcp-contract.md`
 - `shared/excalibur-wp-publish-contract.md`
 - `shared/quality-blog.md`

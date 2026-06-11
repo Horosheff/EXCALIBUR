@@ -2,7 +2,7 @@
   "name": "excalibur-blog",
   "displayName": "Excalibur BLOG",
   "description": "Плагин SEO/GEO статей: оркестратор + субагенты (research, writer, geo-qa, cover||schema, indexer, publish). Параллельные Task где безопасно.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "keywords": [
     "excalibur",
     "blog",
