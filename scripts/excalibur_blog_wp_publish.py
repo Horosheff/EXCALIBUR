@@ -224,7 +224,9 @@ if (!empty($p['cover_b64'])) {{
 
 if (!empty($p['schema_jsonld'])) {{
     update_post_meta($post_id, '_excalibur_blog_schema_jsonld', wp_slash($p['schema_jsonld']));
+    update_post_meta($post_id, '_excalibur_blog_skip_theme_faq', '1');
     echo 'OK schema_meta=1' . PHP_EOL;
+    echo 'OK skip_theme_faq_meta=1' . PHP_EOL;
 }}
 
 if (!empty($p['inline_images'])) {{

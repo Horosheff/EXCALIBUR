@@ -35,6 +35,38 @@ def detect_anchor_toc(html: str) -> list[str]:
     return errors
 
 
+def detect_duplicate_faq_sections(html: str) -> list[str]:
+    """Fail if article has more than one FAQ heading block."""
+    errors: list[str] = []
+    faq_headings = re.findall(
+        r"<h2[^>]*>\s*(.*?)\s*</h2>",
+        html,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    faq_like = []
+    for raw in faq_headings:
+        text = re.sub(r"<[^>]+>", "", raw).strip().lower()
+        if re.search(r"faq|частые вопрос|задаваемые вопрос", text):
+            faq_like.append(text)
+    if len(faq_like) > 1:
+        errors.append(
+            "Forbidden duplicate FAQ sections in article.html: "
+            + "; ".join(faq_like[:4])
+            + ". Keep exactly one <h2>Частые вопросы</h2> block."
+        )
+    banned_second = re.search(
+        r"<h2[^>]*>\s*[^<]*(?:задаваемые вопросы по теме|faq по теме)",
+        html,
+        flags=re.IGNORECASE,
+    )
+    if banned_second:
+        errors.append(
+            "Forbidden second FAQ block title (e.g. «Часто задаваемые вопросы по теме»). "
+            "Use only one thematic FAQ section."
+        )
+    return errors
+
+
 class HTMLTagLinter(HTMLParser):
     def __init__(self, whitelist: set[str]) -> None:
         super().__init__()
@@ -89,6 +121,7 @@ def lint_html_file(html_path: Path, whitelist: set[str]) -> dict[str, Any]:
     linter.feed(html_content)
     linter.check_unclosed_tags()
     linter.errors.extend(detect_anchor_toc(html_content))
+    linter.errors.extend(detect_duplicate_faq_sections(html_content))
 
     return {
         "file": str(html_path.name),

@@ -30,6 +30,24 @@ python scripts/excalibur_blog_wp_publish.py \
 2. Featured image из `cover/cover.png` + alt
 3. **Inline images** — все локальные `<img src="cover/...">` загружаются в Media Library, `src` заменяется на WP URL
 4. Post meta `_excalibur_blog_schema_jsonld` — JSON-LD для `single.php`
+5. Post meta `_excalibur_blog_skip_theme_faq` = `1` — сигнал теме **не** добавлять глобальный FAQ-блок
+
+## Дубли FAQ на live-странице (важно)
+
+Excalibur кладёт в `post_content` **один** FAQ по теме (`<h2>Частые вопросы</h2>`).
+
+Тема mayai.ru может **дописывать** после контента второй блок «Часто задаваемые вопросы по теме (FAQ)» с универсальными вопросами про контент-завод — это **не** часть `article.html`.
+
+**Исправление в теме WordPress** (`single.php` или фильтр `the_content`):
+
+```php
+$skip_theme_faq = get_post_meta(get_the_ID(), '_excalibur_blog_skip_theme_faq', true);
+if ($skip_theme_faq === '1') {
+    // не выводить глобальный FAQ-блок темы для постов Excalibur BLOG
+}
+```
+
+Publish-скрипт выставляет meta `_excalibur_blog_skip_theme_faq` автоматически при каждой публикации.
 
 ## Артефакты после publish
 
