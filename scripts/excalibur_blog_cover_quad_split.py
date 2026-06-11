@@ -27,6 +27,10 @@ INLINE_FILES = {
 PANEL_ASPECT = 16 / 9
 RECOMMENDED_CANVAS = (2048, 1152)  # 2×2 grid of 1024×576 (16:9 each)
 DEFAULT_OUTPUT_SIZE = (1200, 675)
+WHITE_THRESHOLD = 235
+MIN_GUTTER_RUN = 2
+GUTTER_SEARCH_RADIUS = 80
+GUTTER_WHITE_FRACTION = 0.92
 
 
 def project_root() -> Path:
@@ -141,6 +145,96 @@ def quadrant_box(width: int, height: int, name: str) -> tuple[int, int, int, int
     raise ValueError(f"unknown quadrant: {name}")
 
 
+def _find_gutter_band(white_fracs: list[float], center: int) -> tuple[int, int] | None:
+    lo = max(0, center - GUTTER_SEARCH_RADIUS)
+    hi = min(len(white_fracs), center + GUTTER_SEARCH_RADIUS)
+    best: tuple[int, int] | None = None
+    best_score = -1.0
+    i = lo
+    while i < hi:
+        if white_fracs[i] >= GUTTER_WHITE_FRACTION:
+            j = i
+            while j < hi and white_fracs[j] >= GUTTER_WHITE_FRACTION:
+                j += 1
+            run_len = j - i
+            if run_len >= MIN_GUTTER_RUN:
+                mid = (i + j) / 2
+                dist = abs(mid - center)
+                score = run_len * 10 - dist
+                if score > best_score:
+                    best = (i, j)
+                    best_score = score
+            i = j
+        else:
+            i += 1
+    return best
+
+
+def detect_quadrant_boxes(source) -> tuple[dict[str, tuple[int, int, int, int]], dict[str, Any]]:
+    import numpy as np
+
+    arr = np.array(source.convert("RGB"))
+    height, width = arr.shape[:2]
+    row_white = [(arr[y].min(axis=1) > WHITE_THRESHOLD).mean() for y in range(height)]
+    col_white = [(arr[:, x].min(axis=1) > WHITE_THRESHOLD).mean() for x in range(width)]
+
+    h_gutter = _find_gutter_band(row_white, height // 2)
+    v_gutter = _find_gutter_band(col_white, width // 2)
+    meta: dict[str, Any] = {
+        "split_mode": "mechanical_center",
+        "h_gutter_px": None,
+        "v_gutter_px": None,
+    }
+
+    if h_gutter and v_gutter:
+        h0, h1 = h_gutter
+        v0, v1 = v_gutter
+        boxes = {
+            "top_left": (0, 0, v0, h0),
+            "top_right": (v1, 0, width, h0),
+            "bottom_left": (0, h1, v0, height),
+            "bottom_right": (v1, h1, width, height),
+        }
+        meta = {
+            "split_mode": "gutter_detect",
+            "h_gutter_px": {"start": h0, "end": h1},
+            "v_gutter_px": {"start": v0, "end": v1},
+        }
+        return boxes, meta
+
+    boxes = {name: quadrant_box(width, height, name) for name in QUADRANT_ORDER}
+    return boxes, meta
+
+
+def validate_panel_boxes(boxes: dict[str, tuple[int, int, int, int]]) -> list[str]:
+    errors: list[str] = []
+    for name in QUADRANT_ORDER:
+        left, top, right, bottom = boxes[name]
+        panel_w = right - left
+        panel_h = bottom - top
+        if panel_w < 320 or panel_h < 180:
+            errors.append(f"{name} too small after split: {panel_w}x{panel_h}")
+    return errors
+
+
+def center_crop_to_aspect(box: tuple[int, int, int, int], aspect: float = PANEL_ASPECT) -> tuple[int, int, int, int]:
+    left, top, right, bottom = box
+    width = right - left
+    height = bottom - top
+    if width <= 0 or height <= 0:
+        return box
+    current = width / height
+    if abs(current - aspect) <= 0.01:
+        return box
+    if current > aspect:
+        new_w = int(round(height * aspect))
+        pad = (width - new_w) // 2
+        return (left + pad, top, left + pad + new_w, bottom)
+    new_h = int(round(width / aspect))
+    pad = (height - new_h) // 2
+    return (left, top + pad, right, top + pad + new_h)
+
+
 def resolve_quadrant(slot: dict[str, Any], slot_key: str) -> str:
     q = slot.get("quadrant")
     if q:
@@ -166,13 +260,19 @@ def split_canvas(
         if grid_errors:
             raise ValueError("; ".join(grid_errors))
 
+        quadrant_boxes, split_meta = detect_quadrant_boxes(source)
+        panel_errors = validate_panel_boxes(quadrant_boxes)
+        if panel_errors:
+            raise ValueError("; ".join(panel_errors))
+
         outputs: dict[str, Any] = {}
         slots = manifest.get("slots") or {}
 
         for slot_key in ("cover", "inline_1", "inline_2", "inline_3"):
             slot = slots.get(slot_key) or {}
             quadrant = resolve_quadrant(slot, slot_key)
-            box = quadrant_box(width, height, quadrant)
+            raw_box = quadrant_boxes[quadrant]
+            box = center_crop_to_aspect(raw_box)
             crop = source.crop(box)
 
             if output_size:
@@ -185,16 +285,19 @@ def split_canvas(
                 "file": f"cover/{out_name}",
                 "quadrant": quadrant,
                 "box_px": {"left": box[0], "top": box[1], "right": box[2], "bottom": box[3]},
+                "raw_box_px": {"left": raw_box[0], "top": raw_box[1], "right": raw_box[2], "bottom": raw_box[3]},
                 "size_px": list(crop.size),
                 "aspect_ratio": "16:9",
                 "alt": slot.get("alt") or "",
                 "h2_anchor": slot.get("h2_anchor"),
             }
 
+        sample_box = quadrant_boxes["top_left"]
         return {
             "source_canvas": str(canvas_path),
             "source_size_px": [width, height],
-            "panel_size_px": [width // 2, height // 2],
+            "panel_size_px": [sample_box[2] - sample_box[0], sample_box[3] - sample_box[1]],
+            "split_meta": split_meta,
             "output_size_px": list(output_size) if output_size else None,
             "outputs": outputs,
         }

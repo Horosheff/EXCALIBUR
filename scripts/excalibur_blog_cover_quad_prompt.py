@@ -52,7 +52,9 @@ def build_prompt(manifest: dict, style: dict, hero: dict, types_catalog: dict, d
 
     lines = [
         style.get("global_prompt_prefix", "").strip(),
-        "Single canvas 2048x1152 pixels, exact 2x2 grid, four equal 16:9 panels (1024x576 each), thin white gutters.",
+        "Single canvas 2048x1152 pixels, exact 2x2 grid, four equal 16:9 panels (1024x576 each). "
+        "Optional thin white gutters ONLY on the exact center lines (x=1024 and y=576); "
+        "keep all panel content strictly inside its quadrant — no bleed across seams.",
         "",
         "REFERENCE FACE (top-left cover ONLY): preserve EXACT likeness from input reference photo —",
         hero.get("prompt_fragment", "").strip(),
