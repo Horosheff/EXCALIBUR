@@ -19,6 +19,8 @@ from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
 
+from excalibur_repo_paths import repo_relative
+
 USER_AGENT = "ExcaliburBlogResearch/1.0 (+research-start)"
 DDG_HTML = "https://html.duckduckgo.com/html/"
 DEFAULT_TZ = "Europe/Moscow"
@@ -309,7 +311,7 @@ def run_research_start(
         "topic": topic,
         "utility_gate": utility_report,
         "search_queries": queries,
-        "output_dir": str(out_dir).replace("\\", "/"),
+        "output_dir": repo_relative(out_dir, project_root()),
         "next_step": "Прочитай research-serp.json, дополни web research, напиши research-notes.md",
     }
 

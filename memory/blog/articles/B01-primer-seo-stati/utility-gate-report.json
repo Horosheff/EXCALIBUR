@@ -4,7 +4,7 @@
   "reports": [
     {
       "gate": "article",
-      "article_dir": "C:\\Users\\mrrut\\Desktop\\EXCALIBUR\\memory\\blog\\articles\\B01-primer-seo-stati",
+      "article_dir": "memory\\blog\\articles\\B01-primer-seo-stati",
       "status": "PASS",
       "metrics": {
         "numbered_list_items": 6,

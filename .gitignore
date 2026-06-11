@@ -1,6 +1,7 @@
 memory/site.env.local
 memory/site.env.local.example
 .cursor/excalibur-blog-handoff.md
+shared/excalibur-blog-handoff.md
 .cursor/excalibur-blog-fragments/
 *.local
 __pycache__/

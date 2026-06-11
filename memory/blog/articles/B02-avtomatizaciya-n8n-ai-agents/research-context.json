@@ -81,6 +81,6 @@
       "purpose": "SERP по H1"
     }
   ],
-  "output_dir": "C:/Users/mrrut/Desktop/EXCALIBUR/memory/blog/articles/B02-avtomatizaciya-n8n-ai-agents",
+  "output_dir": "memory/blog/articles/B02-avtomatizaciya-n8n-ai-agents",
   "next_step": "Прочитай research-serp.json, дополни web research, напиши research-notes.md"
 }

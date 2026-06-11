@@ -33,6 +33,9 @@ GUTTER_SEARCH_RADIUS = 80
 GUTTER_WHITE_FRACTION = 0.92
 
 
+from excalibur_repo_paths import repo_relative
+
+
 def project_root() -> Path:
     env_root = os.environ.get("EXCALIBUR_PROJECT_ROOT", "").strip()
     if env_root:
@@ -294,7 +297,7 @@ def split_canvas(
 
         sample_box = quadrant_boxes["top_left"]
         return {
-            "source_canvas": str(canvas_path),
+            "source_canvas": repo_relative(canvas_path, project_root()),
             "source_size_px": [width, height],
             "panel_size_px": [sample_box[2] - sample_box[0], sample_box[3] - sample_box[1]],
             "split_meta": split_meta,

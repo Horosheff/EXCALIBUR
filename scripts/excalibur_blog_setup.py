@@ -72,7 +72,7 @@ def main() -> int:
     ftp_pass = get_input("FTP Пароль", "")
     ftp_root = get_input(
         "FTP путь к корню WordPress (где wp-load.php)",
-        "/mrrutrnc.beget.tech/public_html/",
+        "/public_html/",
     )
     
     allow_publish_input = get_input("Разрешить автоматическую публикацию на боевой сайт? (yes/no)", "no")

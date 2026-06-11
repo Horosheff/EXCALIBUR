@@ -4,7 +4,7 @@
   "reports": [
     {
       "gate": "article",
-      "article_dir": "C:\\Users\\mrrut\\Desktop\\EXCALIBUR\\memory\\blog\\articles\\B04-geo-optimizaciya-sajta-2026",
+      "article_dir": "memory\\blog\\articles\\B04-geo-optimizaciya-sajta-2026",
       "status": "PASS",
       "metrics": {
         "numbered_list_items": 42,

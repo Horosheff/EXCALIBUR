@@ -136,7 +136,7 @@
 
 === EXCALIBUR BLOG RESEARCH ===
 topic_id: B01
-article_dir: C:\Users\mrrut\Desktop\EXCALIBUR\memory\blog\articles\B01-primer-seo-stati
+article_dir: memory/blog/articles/B01-primer-seo-stati
 status: ✅
 summary: SERP — 5 конкурентов (Яндекс Direct, Pikapuka, MaryProject, audit4seo, Digital Impuls). Угол — единый workflow SEO+GEO longread «для людей»: читабельность, атомарные чанки, FAQ/schema, чеклист. Режим B, 17 фактов с URL, 7 FAQ-кандидатов. Готов к writer.
 ===

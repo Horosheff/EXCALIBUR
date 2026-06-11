@@ -12,6 +12,7 @@ import urllib.request
 from pathlib import Path
 
 from asset_download import download_url_bytes
+from excalibur_repo_paths import repo_relative
 from image_validate import sniff_image_format, validate_image_file
 
 
@@ -44,9 +45,9 @@ def cover_url_from_registry(registry_path: Path) -> str:
     return ""
 
 
-def normalize_cover_png(cover_path: Path, registry_path: Path) -> dict[str, object]:
+def normalize_cover_png(cover_path: Path, registry_path: Path, root: Path) -> dict[str, object]:
     evidence: dict[str, object] = {
-        "path": str(cover_path),
+        "path": repo_relative(cover_path, root),
         "source": "existing_file",
         "decode_verified": False,
     }
@@ -119,7 +120,7 @@ def load_article(article_dir: Path) -> dict:
     cover_evidence: dict[str, object] = {}
     cover_reg = article_dir / "cover" / "cover-registry.json"
     if cover_path.is_file():
-        cover_evidence = normalize_cover_png(cover_path, cover_reg)
+        cover_evidence = normalize_cover_png(cover_path, cover_reg, project_root())
         cover_b64 = base64.b64encode(cover_path.read_bytes()).decode("ascii")
     schema_raw = ""
     if schema_path.is_file():

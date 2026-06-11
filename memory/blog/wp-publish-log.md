@@ -28,7 +28,7 @@ python scripts/excalibur_blog_wp_publish.py --article-dir memory/blog/articles/B
 ### Blockers
 
 1. **Network:** HTTPS к `mayai.ru:443` недоступен из локальной среды (WinError 10060). FTP (порт 21) работает, HTTP-триггер bootstrap — нет.
-2. **FTP path:** аккаунт `mrrutrnc_blog` видит только `/index.php` + `/cgi-bin/`, **без** `wp-load.php`. WordPress на `https://mayai.ru/blog/` — другой document root.
+2. **FTP path:** аккаунт `***_blog` видит только `/index.php` + `/cgi-bin/`, **без** `wp-load.php`. WordPress на `https://mayai.ru/blog/` — другой document root.
 3. **Bootstrap 404:** загруженный `excalibur-blog-publish-once.php` (и тестовый `excalibur-test-once.php`) отдают HTTP 404 снаружи, хотя `index.php` в том же FTP root отдаётся на главной.
 
 ### Cleanup
@@ -37,7 +37,7 @@ python scripts/excalibur_blog_wp_publish.py --article-dir memory/blog/articles/B
 
 ### Next steps (для оператора)
 
-1. Обновить `memory/site.env.local`: FTP_USER/FTP_PASS + `FTP_ROOT=/` (корень FTP после login, где `wp-load.php`). Путь панели Beget: `FTP_PANEL_PATH=/mrrutrnc.beget.tech/public_html/`.
+1. Обновить `memory/site.env.local`: FTP_USER/FTP_PASS + `FTP_ROOT=/` (корень FTP после login, где `wp-load.php`). Путь панели хостинга: `FTP_PANEL_PATH=/your-account.beget.tech/public_html/`.
 2. Либо запустить publish с машины/сети, где `curl https://mayai.ru` отвечает < 5 с.
 3. Альтернатива: WP Application Password + REST API / MCP WordPress blob publish.
 
@@ -57,7 +57,7 @@ python scripts/excalibur_blog_wp_publish.py --article-dir memory/blog/articles/B
 
 ### Fix applied
 
-- Обновлены FTP credentials в `memory/site.env.local`
+- Обновлены FTP credentials в `memory/site.env.local` (локально, не в git)
 - `FTP_ROOT=/` (wp-load.php в корне аккаунта после login)
 - `excalibur_blog_wp_publish.py` — поддержка `FTP_ROOT` из env
 

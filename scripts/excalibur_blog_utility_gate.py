@@ -11,6 +11,9 @@ from pathlib import Path
 from typing import Any
 
 
+from excalibur_repo_paths import repo_relative
+
+
 def project_root() -> Path:
     return Path(__file__).resolve().parents[1]
 
@@ -267,7 +270,7 @@ def gate_article(article_dir: Path, policy: dict[str, Any]) -> dict[str, Any]:
     status = "PASS" if not errors else "BLOCK"
     return {
         "gate": "article",
-        "article_dir": str(article_dir),
+        "article_dir": repo_relative(article_dir, project_root()),
         "status": status,
         "metrics": {
             "numbered_list_items": li_in_ol,

@@ -249,7 +249,7 @@
 
 === EXCALIBUR BLOG RESEARCH ===
 topic_id: B04
-article_dir: C:\Users\mrrut\Desktop\EXCALIBUR\memory\blog\articles\B04-geo-optimizaciya-sajta-2026
+article_dir: memory/blog/articles/B04-geo-optimizaciya-sajta-2026
 status: ✅ PASS
 utility_verdict: PASS
 summary: SERP — 8 конкурентов (Habr 1042732, trigub, sitegeo, getllmspy, ics-media, digitalrocket, generative-optimization.ru, audit4seo). Wordstat: geo оптимизация 981, geo оптимизация сайта 248. Угол — DIY чек-лист 30+ пунктов (🔴🟡🟢) + аудит robots.txt/Schema/FAQ + мониторинг SoV за 60–90 мин. 24 факта с URL, 9 шагов action_outline, 7 FAQ. Готов к writer.

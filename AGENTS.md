@@ -91,7 +91,7 @@ python3 scripts/excalibur_blog_research_start.py --topic-id B01
 
 ## Git hygiene
 
-**Не коммитить:** `.cursor/excalibur-blog-handoff.md`, `.cursor/excalibur-blog-fragments/`, `memory/site.env.local`
+**Не коммитить:** `.cursor/excalibur-blog-handoff.md`, `shared/excalibur-blog-handoff.md`, `.cursor/excalibur-blog-fragments/`, `memory/site.env.local`, абсолютные пути Windows/macOS в отчётах.
 
 **Коммитить после publish:** `shared/published-articles.md`, при необходимости артефакты статьи в `memory/blog/`.
 

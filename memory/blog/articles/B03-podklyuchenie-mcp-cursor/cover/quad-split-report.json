@@ -3,7 +3,7 @@
   "status": "PASS",
   "manifest": "cover/quad-manifest.json",
   "split": {
-    "source_canvas": "C:\\Users\\mrrut\\Desktop\\EXCALIBUR\\memory\\blog\\articles\\B03-podklyuchenie-mcp-cursor\\cover\\canvas-quad.png",
+    "source_canvas": "memory\\blog\\articles\\B03-podklyuchenie-mcp-cursor\\cover\\canvas-quad.png",
     "source_size_px": [
       2048,
       1152
